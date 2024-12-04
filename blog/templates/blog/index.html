@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/image0.jpeg" %} " alt="Carol -The Author of this Blog">
+            <h2>CAROL BLOG</h2>
+        </header>
+        <p>Hi, I am Carol and I love blogs about tech and cars</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>
+            I love programming because it allows me to
+            create and solve problems in a logical and structured way.
+            It's like a puzzle that challenges my mind and creativity,
+            and the satisfaction of seeing my code come to life is truly rewarding.
+            Programming opens up a whole new world of possibilities and learning
+            opportunities, and the continuous improvement and
+            innovation in this field keep me inspired and motivated.
+        </p>
+        <p>
+            As a software developer, I love the constant growth and learning that comes
+            with the field. Every day presents new challenges and opportunities to
+            expand my skills and knowledge. Whether it's mastering a new programming
+            language, exploring a cutting-edge technology, or solving a complex problem,
+            I thrive on the excitement of pushing myself to new heights.
+            The satisfaction of seeing my code come to life and make a positive
+            impact on users is incredibly rewarding. I am passionate about my work
+            and am always eager to take on new projects and challenges. I am constantly
+            seeking out opportunities to learn and grow, both personally and professionally.
+        </p>
+    </section>
+{% endblock %}
